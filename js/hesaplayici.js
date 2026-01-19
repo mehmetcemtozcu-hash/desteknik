@@ -267,7 +267,7 @@ Bu rapor tahmini degerlere dayanmaktadir.
 Gercek tasarruf potansiyeli icin profesyonel
 enerji denetimi oneriyoruz.
 
-Iletisim: info@desteknik.com
+Iletisim: cem.tozcu@outlook.com
 Web: www.desteknik.com
     `.trim();
 
