@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Desteknik - Enerji Verimliligi Danismanligi. Enerji denetimi, verimlilik danismanligi, proje yonetimi ve egitim hizmetleri.">
+    <title>Desteknik - Enerji Verimliligi Danismanligi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'energy-green': '#22c55e',
+                        'energy-dark': '#15803d',
+                        'energy-light': '#dcfce7',
+                        'energy-blue': '#0ea5e9',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <div class="w-10 h-10 bg-energy-green rounded-full flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-gray-800">Desteknik</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-energy-green font-medium">Ana Sayfa</a>
+                    <a href="hizmetler.html" class="text-gray-600 hover:text-energy-green transition">Hizmetler</a>
+                    <a href="hesaplayici.html" class="text-gray-600 hover:text-energy-green transition">Enerji Hesaplayici</a>
+                    <a href="hakkimizda.html" class="text-gray-600 hover:text-energy-green transition">Hakkimizda</a>
+                    <a href="iletisim.html" class="bg-energy-green text-white px-4 py-2 rounded-lg hover:bg-energy-dark transition">Iletisim</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-energy-green">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <a href="index.html" class="block py-2 text-energy-green font-medium">Ana Sayfa</a>
+                <a href="hizmetler.html" class="block py-2 text-gray-600">Hizmetler</a>
+                <a href="hesaplayici.html" class="block py-2 text-gray-600">Enerji Hesaplayici</a>
+                <a href="hakkimizda.html" class="block py-2 text-gray-600">Hakkimizda</a>
+                <a href="iletisim.html" class="block py-2 text-gray-600">Iletisim</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-energy-green to-energy-dark text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                        Enerji Verimliligi ile Maliyetlerinizi Azaltin
+                    </h1>
+                    <p class="text-xl text-green-100 mb-8">
+                        Bagimsiz enerji verimliligi danismanligi ile isletmenizin enerji tuketimini optimize edin,
+                        maliyetlerinizi dusurun ve surdurulebilir bir gelecege katkida bulunun.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="hesaplayici.html" class="bg-white text-energy-green px-6 py-3 rounded-lg font-semibold hover:bg-green-50 transition text-center">
+                            Enerji Tasarrufunu Hesapla
+                        </a>
+                        <a href="iletisim.html" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-energy-green transition text-center">
+                            Ucretsiz Danisin
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:flex justify-center">
+                    <div class="relative">
+                        <div class="w-64 h-64 bg-white/20 rounded-full flex items-center justify-center">
+                            <div class="w-48 h-48 bg-white/30 rounded-full flex items-center justify-center">
+                                <svg class="w-24 h-24 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-3xl md:text-4xl font-bold text-energy-green">%30</div>
+                    <div class="text-gray-600 mt-2">Ortalama Tasarruf</div>
+                </div>
+                <div>
+                    <div class="text-3xl md:text-4xl font-bold text-energy-green">150+</div>
+                    <div class="text-gray-600 mt-2">Tamamlanan Proje</div>
+                </div>
+                <div>
+                    <div class="text-3xl md:text-4xl font-bold text-energy-green">10+</div>
+                    <div class="text-gray-600 mt-2">Yillik Deneyim</div>
+                </div>
+                <div>
+                    <div class="text-3xl md:text-4xl font-bold text-energy-green">%98</div>
+                    <div class="text-gray-600 mt-2">Musteri Memnuniyeti</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Hizmetlerimiz</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Enerji verimliligi alaninda kapsamli cozumler sunuyoruz
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition">
+                    <div class="w-14 h-14 bg-energy-light rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-energy-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Enerji Denetimi</h3>
+                    <p class="text-gray-600">Bina ve tesis enerji tuketim analizi ile tasarruf firsatlarini belirliyoruz.</p>
+                    <a href="hizmetler.html#denetim" class="text-energy-green font-medium mt-4 inline-block hover:underline">Detayli Bilgi &rarr;</a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition">
+                    <div class="w-14 h-14 bg-energy-light rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-energy-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Verimlilik Danismanligi</h3>
+                    <p class="text-gray-600">Enerji tasarrufu onerileri ve uygulamalari ile maliyetlerinizi azaltin.</p>
+                    <a href="hizmetler.html#danismanlik" class="text-energy-green font-medium mt-4 inline-block hover:underline">Detayli Bilgi &rarr;</a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition">
+                    <div class="w-14 h-14 bg-energy-light rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-energy-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Proje Yonetimi</h3>
+                    <p class="text-gray-600">Enerji verimliligi projelerinin planlanmasi ve uygulanmasi.</p>
+                    <a href="hizmetler.html#proje" class="text-energy-green font-medium mt-4 inline-block hover:underline">Detayli Bilgi &rarr;</a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition">
+                    <div class="w-14 h-14 bg-energy-light rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-energy-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Egitim</h3>
+                    <p class="text-gray-600">Enerji verimliligi egitimleri ile ekiplerinizi bilincli hale getirin.</p>
+                    <a href="hizmetler.html#egitim" class="text-energy-green font-medium mt-4 inline-block hover:underline">Detayli Bilgi &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator CTA -->
+    <section class="py-20 bg-energy-blue text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Tasarruf Potansiyelinizi Kesfsedin</h2>
+            <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+                Ucretsiz enerji hesaplayicimiz ile ne kadar tasarruf edebileceginizi hemen ogrenin.
+            </p>
+            <a href="hesaplayici.html" class="inline-block bg-white text-energy-blue px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-50 transition">
+                Hemen Hesapla
+            </a>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Neden Desteknik?</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Bagimsiz ve guvenir danismanlik hizmetimiz ile fark yaratiyoruz
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-energy-light rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-energy-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Bagimsiz Danismanlik</h3>
+                    <p class="text-gray-600">Hicbir urun veya firmaya bagli olmadan tamamen tarafsiz oneriler sunuyoruz.</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-energy-light rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-energy-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Olculebilir Sonuclar</h3>
+                    <p class="text-gray-600">Yaptigniz her yatirimin getirisini net bir sekilde olcup raporluyoruz.</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-energy-light rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-energy-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Uzman Ekip</h3>
+                    <p class="text-gray-600">10 yili askin deneyim ve sertifikali uzmanlik ile hizmetinizdeyiz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="py-20 bg-gray-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Projenizi Konusalim</h2>
+            <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                Enerji verimliligi ihtiyaclarinizi degerlendirmek icin ucretsiz on gorusme ayarlayin.
+            </p>
+            <a href="iletisim.html" class="inline-block bg-energy-green text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-energy-dark transition">
+                Iletisime Gecin
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 bg-energy-green rounded-full flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold">Desteknik</span>
+                    </div>
+                    <p class="text-gray-400">Bagimsiz enerji verimliligi danismanligi hizmetleri.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Hizmetler</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="hizmetler.html#denetim" class="hover:text-white transition">Enerji Denetimi</a></li>
+                        <li><a href="hizmetler.html#danismanlik" class="hover:text-white transition">Verimlilik Danismanligi</a></li>
+                        <li><a href="hizmetler.html#proje" class="hover:text-white transition">Proje Yonetimi</a></li>
+                        <li><a href="hizmetler.html#egitim" class="hover:text-white transition">Egitim</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Hizli Erisim</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="hesaplayici.html" class="hover:text-white transition">Enerji Hesaplayici</a></li>
+                        <li><a href="hakkimizda.html" class="hover:text-white transition">Hakkimizda</a></li>
+                        <li><a href="iletisim.html" class="hover:text-white transition">Iletisim</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Iletisim</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>info@desteknik.com</li>
+                        <li>+90 (xxx) xxx xx xx</li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/cem-tozcu-2b287885/" target="_blank" class="hover:text-white transition">
+                                LinkedIn
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Desteknik. Tum haklari saklidir.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

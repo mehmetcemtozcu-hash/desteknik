@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Desteknik Enerji Tasarruf Hesaplayici - Potansiyel enerji tasarrufunuzu hesaplayin">
+    <title>Enerji Hesaplayici - Desteknik</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'energy-green': '#22c55e',
+                        'energy-dark': '#15803d',
+                        'energy-light': '#dcfce7',
+                        'energy-blue': '#0ea5e9',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <div class="w-10 h-10 bg-energy-green rounded-full flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-gray-800">Desteknik</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-energy-green transition">Ana Sayfa</a>
+                    <a href="hizmetler.html" class="text-gray-600 hover:text-energy-green transition">Hizmetler</a>
+                    <a href="hesaplayici.html" class="text-energy-green font-medium">Enerji Hesaplayici</a>
+                    <a href="hakkimizda.html" class="text-gray-600 hover:text-energy-green transition">Hakkimizda</a>
+                    <a href="iletisim.html" class="bg-energy-green text-white px-4 py-2 rounded-lg hover:bg-energy-dark transition">Iletisim</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-energy-green">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <a href="index.html" class="block py-2 text-gray-600">Ana Sayfa</a>
+                <a href="hizmetler.html" class="block py-2 text-gray-600">Hizmetler</a>
+                <a href="hesaplayici.html" class="block py-2 text-energy-green font-medium">Enerji Hesaplayici</a>
+                <a href="hakkimizda.html" class="block py-2 text-gray-600">Hakkimizda</a>
+                <a href="iletisim.html" class="block py-2 text-gray-600">Iletisim</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="bg-gradient-to-br from-energy-blue to-blue-700 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Enerji Tasarruf Hesaplayici</h1>
+            <p class="text-xl text-blue-100 max-w-2xl mx-auto">
+                Isletmenizin enerji tuketimini girin, potansiyel tasarrufunuzu hemen ogrein
+            </p>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="py-12 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <form id="energy-calculator" class="space-y-8">
+                    <!-- Building Type -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-3">Bina Tipi</label>
+                        <div class="grid grid-cols-3 gap-4">
+                            <label class="relative">
+                                <input type="radio" name="buildingType" value="konut" class="peer sr-only" checked>
+                                <div class="p-4 border-2 border-gray-200 rounded-lg cursor-pointer text-center peer-checked:border-energy-green peer-checked:bg-energy-light transition">
+                                    <svg class="w-8 h-8 mx-auto mb-2 text-gray-500 peer-checked:text-energy-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                                    </svg>
+                                    <span class="font-medium">Konut</span>
+                                </div>
+                            </label>
+                            <label class="relative">
+                                <input type="radio" name="buildingType" value="ticari" class="peer sr-only">
+                                <div class="p-4 border-2 border-gray-200 rounded-lg cursor-pointer text-center peer-checked:border-energy-green peer-checked:bg-energy-light transition">
+                                    <svg class="w-8 h-8 mx-auto mb-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                                    </svg>
+                                    <span class="font-medium">Ticari</span>
+                                </div>
+                            </label>
+                            <label class="relative">
+                                <input type="radio" name="buildingType" value="endustriyel" class="peer sr-only">
+                                <div class="p-4 border-2 border-gray-200 rounded-lg cursor-pointer text-center peer-checked:border-energy-green peer-checked:bg-energy-light transition">
+                                    <svg class="w-8 h-8 mx-auto mb-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                                    </svg>
+                                    <span class="font-medium">Endustriyel</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Building Area -->
+                    <div>
+                        <label for="buildingArea" class="block text-sm font-medium text-gray-700 mb-1">
+                            Bina Alani (m<sup>2</sup>)
+                        </label>
+                        <input type="number" id="buildingArea" name="buildingArea" min="1" required
+                               placeholder="Ornek: 500"
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-energy-green focus:border-energy-green transition">
+                    </div>
+
+                    <!-- Building Age -->
+                    <div>
+                        <label for="buildingAge" class="block text-sm font-medium text-gray-700 mb-1">Bina Yasi</label>
+                        <select id="buildingAge" name="buildingAge" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-energy-green focus:border-energy-green transition">
+                            <option value="">Seciniz</option>
+                            <option value="0-5">0-5 yil</option>
+                            <option value="5-10">5-10 yil</option>
+                            <option value="10-20">10-20 yil</option>
+                            <option value="20+">20 yil ustu</option>
+                        </select>
+                    </div>
+
+                    <!-- Energy Consumption -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="electricityConsumption" class="block text-sm font-medium text-gray-700 mb-1">
+                                Aylik Elektrik Tuketimi (kWh)
+                            </label>
+                            <input type="number" id="electricityConsumption" name="electricityConsumption" min="0" required
+                                   placeholder="Ornek: 5000"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-energy-green focus:border-energy-green transition">
+                            <p class="text-xs text-gray-500 mt-1">Faturanizdaki kWh degerini girin</p>
+                        </div>
+                        <div>
+                            <label for="gasConsumption" class="block text-sm font-medium text-gray-700 mb-1">
+                                Aylik Dogalgaz Tuketimi (m<sup>3</sup>)
+                            </label>
+                            <input type="number" id="gasConsumption" name="gasConsumption" min="0"
+                                   placeholder="Ornek: 500"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-energy-green focus:border-energy-green transition">
+                            <p class="text-xs text-gray-500 mt-1">Dogalgaz kullanmiyorsaniz bos birakin</p>
+                        </div>
+                    </div>
+
+                    <!-- Energy Prices -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="electricityPrice" class="block text-sm font-medium text-gray-700 mb-1">
+                                Elektrik Birim Fiyati (TL/kWh)
+                            </label>
+                            <input type="number" id="electricityPrice" name="electricityPrice" min="0" step="0.01" value="2.50"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-energy-green focus:border-energy-green transition">
+                        </div>
+                        <div>
+                            <label for="gasPrice" class="block text-sm font-medium text-gray-700 mb-1">
+                                Dogalgaz Birim Fiyati (TL/m<sup>3</sup>)
+                            </label>
+                            <input type="number" id="gasPrice" name="gasPrice" min="0" step="0.01" value="8.00"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-energy-green focus:border-energy-green transition">
+                        </div>
+                    </div>
+
+                    <!-- Current Measures -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-3">Mevcut Enerji Verimliligi Onlemleri</label>
+                        <div class="grid md:grid-cols-2 gap-3">
+                            <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:border-energy-green cursor-pointer transition">
+                                <input type="checkbox" name="measures" value="led" class="w-4 h-4 text-energy-green border-gray-300 rounded focus:ring-energy-green">
+                                <span class="ml-3 text-gray-700">LED Aydinlatma</span>
+                            </label>
+                            <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:border-energy-green cursor-pointer transition">
+                                <input type="checkbox" name="measures" value="insulation" class="w-4 h-4 text-energy-green border-gray-300 rounded focus:ring-energy-green">
+                                <span class="ml-3 text-gray-700">Yalitim</span>
+                            </label>
+                            <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:border-energy-green cursor-pointer transition">
+                                <input type="checkbox" name="measures" value="hvac" class="w-4 h-4 text-energy-green border-gray-300 rounded focus:ring-energy-green">
+                                <span class="ml-3 text-gray-700">Verimli HVAC Sistemi</span>
+                            </label>
+                            <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:border-energy-green cursor-pointer transition">
+                                <input type="checkbox" name="measures" value="solar" class="w-4 h-4 text-energy-green border-gray-300 rounded focus:ring-energy-green">
+                                <span class="ml-3 text-gray-700">Gunes Paneli</span>
+                            </label>
+                            <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:border-energy-green cursor-pointer transition">
+                                <input type="checkbox" name="measures" value="bms" class="w-4 h-4 text-energy-green border-gray-300 rounded focus:ring-energy-green">
+                                <span class="ml-3 text-gray-700">Bina Otomasyon Sistemi</span>
+                            </label>
+                            <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:border-energy-green cursor-pointer transition">
+                                <input type="checkbox" name="measures" value="monitoring" class="w-4 h-4 text-energy-green border-gray-300 rounded focus:ring-energy-green">
+                                <span class="ml-3 text-gray-700">Enerji Izleme Sistemi</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Calculate Button -->
+                    <button type="submit"
+                            class="w-full bg-energy-green text-white px-6 py-4 rounded-lg font-semibold text-lg hover:bg-energy-dark transition">
+                        Tasarrufu Hesapla
+                    </button>
+                </form>
+
+                <!-- Results Section (Hidden by default) -->
+                <div id="results" class="hidden mt-8 pt-8 border-t border-gray-200">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Analiz Sonuclari</h2>
+
+                    <!-- Current Cost -->
+                    <div class="grid md:grid-cols-3 gap-6 mb-8">
+                        <div class="bg-gray-100 rounded-xl p-6 text-center">
+                            <div class="text-sm text-gray-600 mb-1">Mevcut Aylik Maliyet</div>
+                            <div id="currentCost" class="text-3xl font-bold text-gray-800">-</div>
+                        </div>
+                        <div class="bg-energy-light rounded-xl p-6 text-center">
+                            <div class="text-sm text-gray-600 mb-1">Potansiyel Tasarruf</div>
+                            <div id="savingsAmount" class="text-3xl font-bold text-energy-green">-</div>
+                        </div>
+                        <div class="bg-blue-50 rounded-xl p-6 text-center">
+                            <div class="text-sm text-gray-600 mb-1">Tasarruf Orani</div>
+                            <div id="savingsPercent" class="text-3xl font-bold text-energy-blue">-</div>
+                        </div>
+                    </div>
+
+                    <!-- Annual Savings -->
+                    <div class="bg-gradient-to-r from-energy-green to-energy-dark text-white rounded-xl p-6 mb-8">
+                        <div class="grid md:grid-cols-2 gap-6 items-center">
+                            <div>
+                                <div class="text-green-100 mb-1">Yillik Potansiyel Tasarruf</div>
+                                <div id="annualSavings" class="text-4xl font-bold">-</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-green-100 mb-1">5 Yillik Tasarruf</div>
+                                <div id="fiveYearSavings" class="text-4xl font-bold">-</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comparison -->
+                    <div class="mb-8">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Sektor Ortalamasi ile Karsilastirma</h3>
+                        <div class="bg-gray-50 rounded-xl p-6">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-gray-600">Sizin Tuketiminiz</span>
+                                <span id="yourConsumption" class="font-semibold">-</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-4 mb-4">
+                                <div id="consumptionBar" class="bg-energy-blue h-4 rounded-full transition-all duration-500" style="width: 0%"></div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-600">Sektor Ortalamasi</span>
+                                <span id="avgConsumption" class="font-semibold">-</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-4">
+                                <div class="bg-gray-400 h-4 rounded-full" style="width: 100%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recommendations -->
+                    <div class="mb-8">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Onerilen Iyilestirmeler</h3>
+                        <div id="recommendations" class="space-y-3">
+                            <!-- Recommendations will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- CTA -->
+                    <div class="bg-gray-800 text-white rounded-xl p-8 text-center">
+                        <h3 class="text-xl font-bold mb-2">Detayli Analiz Isteyin</h3>
+                        <p class="text-gray-300 mb-4">
+                            Bu hesaplama tahmini degerler icermektedir. Gercek tasarruf potansiyelinizi belirlemek icin
+                            profesyonel bir enerji denetimi yaptiralim.
+                        </p>
+                        <a href="iletisim.html" class="inline-block bg-energy-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-energy-dark transition">
+                            Ucretsiz On Gorusme Talep Et
+                        </a>
+                    </div>
+
+                    <!-- Download Report Button -->
+                    <div class="mt-6 text-center">
+                        <button id="downloadReport"
+                                class="inline-flex items-center px-6 py-3 border-2 border-energy-green text-energy-green rounded-lg font-semibold hover:bg-energy-green hover:text-white transition">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                            </svg>
+                            Raporu Indir (PDF)
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Hesaplama Hakkinda</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <h3 class="font-semibold text-gray-800 mb-2">Nasil Hesaplanir?</h3>
+                    <p class="text-gray-600 text-sm">
+                        Hesaplama, bina tipiniz, yas, alan ve mevcut onlemlerinize gore sektor verilerine
+                        dayali potansiyel tasarruf oranlarini kullanir.
+                    </p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <h3 class="font-semibold text-gray-800 mb-2">Dikkat Edilmesi Gerekenler</h3>
+                    <p class="text-gray-600 text-sm">
+                        Bu sonuclar tahmini degerlerdir. Gercek tasarruf potansiyeli, detayli bir enerji
+                        denetimi ile belirlenebilir.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 bg-energy-green rounded-full flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold">Desteknik</span>
+                    </div>
+                    <p class="text-gray-400">Bagimsiz enerji verimliligi danismanligi hizmetleri.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Hizmetler</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="hizmetler.html#denetim" class="hover:text-white transition">Enerji Denetimi</a></li>
+                        <li><a href="hizmetler.html#danismanlik" class="hover:text-white transition">Verimlilik Danismanligi</a></li>
+                        <li><a href="hizmetler.html#proje" class="hover:text-white transition">Proje Yonetimi</a></li>
+                        <li><a href="hizmetler.html#egitim" class="hover:text-white transition">Egitim</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Hizli Erisim</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="hesaplayici.html" class="hover:text-white transition">Enerji Hesaplayici</a></li>
+                        <li><a href="hakkimizda.html" class="hover:text-white transition">Hakkimizda</a></li>
+                        <li><a href="iletisim.html" class="hover:text-white transition">Iletisim</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Iletisim</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>info@desteknik.com</li>
+                        <li>+90 (xxx) xxx xx xx</li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/cem-tozcu-2b287885/" target="_blank" class="hover:text-white transition">
+                                LinkedIn
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Desteknik. Tum haklari saklidir.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/hesaplayici.js"></script>
+</body>
+</html>

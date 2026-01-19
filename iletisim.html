@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Desteknik Iletisim - Enerji verimliligi danismanligi icin bizimle iletisime gecin">
+    <title>Iletisim - Desteknik</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'energy-green': '#22c55e',
+                        'energy-dark': '#15803d',
+                        'energy-light': '#dcfce7',
+                        'energy-blue': '#0ea5e9',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <div class="w-10 h-10 bg-energy-green rounded-full flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-gray-800">Desteknik</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-energy-green transition">Ana Sayfa</a>
+                    <a href="hizmetler.html" class="text-gray-600 hover:text-energy-green transition">Hizmetler</a>
+                    <a href="hesaplayici.html" class="text-gray-600 hover:text-energy-green transition">Enerji Hesaplayici</a>
+                    <a href="hakkimizda.html" class="text-gray-600 hover:text-energy-green transition">Hakkimizda</a>
+                    <a href="iletisim.html" class="bg-energy-green text-white px-4 py-2 rounded-lg hover:bg-energy-dark transition">Iletisim</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-energy-green">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <a href="index.html" class="block py-2 text-gray-600">Ana Sayfa</a>
+                <a href="hizmetler.html" class="block py-2 text-gray-600">Hizmetler</a>
+                <a href="hesaplayici.html" class="block py-2 text-gray-600">Enerji Hesaplayici</a>
+                <a href="hakkimizda.html" class="block py-2 text-gray-600">Hakkimizda</a>
+                <a href="iletisim.html" class="block py-2 text-energy-green font-medium">Iletisim</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="bg-gradient-to-br from-energy-green to-energy-dark text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Iletisim</h1>
+            <p class="text-xl text-green-100 max-w-2xl mx-auto">
+                Enerji verimliligi ihtiyaclariniz icin bizimle iletisime gecin
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6">Mesaj Gonderin</h2>
+                    <form action="https://formsubmit.co/info@desteknik.com" method="POST" class="space-y-6">
+                        <!-- FormSubmit Configuration -->
+                        <input type="hidden" name="_subject" value="Desteknik Web Sitesi Iletisim Formu">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_next" value="">
+
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Adiniz Soyadiniz *</label>
+                            <input type="text" id="name" name="name" required
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-energy-green focus:border-energy-green transition">
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-posta Adresiniz *</label>
+                            <input type="email" id="email" name="email" required
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-energy-green focus:border-energy-green transition">
+                        </div>
+
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Telefon Numaraniz</label>
+                            <input type="tel" id="phone" name="phone"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-energy-green focus:border-energy-green transition">
+                        </div>
+
+                        <div>
+                            <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Sirket / Kurum</label>
+                            <input type="text" id="company" name="company"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-energy-green focus:border-energy-green transition">
+                        </div>
+
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Ilgilendiginiz Hizmet</label>
+                            <select id="service" name="service"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-energy-green focus:border-energy-green transition">
+                                <option value="">Seciniz</option>
+                                <option value="enerji-denetimi">Enerji Denetimi</option>
+                                <option value="verimlilik-danismanligi">Verimlilik Danismanligi</option>
+                                <option value="proje-yonetimi">Proje Yonetimi</option>
+                                <option value="egitim">Egitim</option>
+                                <option value="diger">Diger</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mesajiniz *</label>
+                            <textarea id="message" name="message" rows="5" required
+                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-energy-green focus:border-energy-green transition"
+                                      placeholder="Projeniz veya ihtiyaciniz hakkinda kisa bilgi veriniz..."></textarea>
+                        </div>
+
+                        <button type="submit"
+                                class="w-full bg-energy-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-energy-dark transition">
+                            Mesaj Gonder
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6">Iletisim Bilgileri</h2>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-energy-light rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-energy-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">E-posta</h3>
+                                <p class="text-gray-600">info@desteknik.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-energy-light rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-energy-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Telefon</h3>
+                                <p class="text-gray-600">+90 (xxx) xxx xx xx</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-energy-light rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-energy-green" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">LinkedIn</h3>
+                                <a href="https://www.linkedin.com/in/cem-tozcu-2b287885/" target="_blank"
+                                   class="text-energy-green hover:underline">linkedin.com/in/cem-tozcu-2b287885</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Info Box -->
+                    <div class="mt-8 bg-energy-light rounded-xl p-6">
+                        <h3 class="font-semibold text-gray-800 mb-2">Ucretsiz On Gorusme</h3>
+                        <p class="text-gray-600 mb-4">
+                            Enerji verimliligi ihtiyaclarinizi anlamak ve size nasil yardimci olabileceginizi konusmak icin
+                            30 dakikalik ucretsiz bir on gorusme ayarlayabiliriz.
+                        </p>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-energy-green mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Mevcut durumunuzun degerlendirmesi
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-energy-green mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Potansiyel tasarruf firsatlari
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-energy-green mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Onerilen yaklasim ve adimlar
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Quick Action -->
+                    <div class="mt-8 p-6 border border-energy-green rounded-xl">
+                        <h3 class="font-semibold text-gray-800 mb-2">Hizli Degerendirme</h3>
+                        <p class="text-gray-600 mb-4">
+                            Hemen simdi enerji tasarruf potansiyelinizi ogrenmek ister misiniz?
+                        </p>
+                        <a href="hesaplayici.html"
+                           class="inline-block bg-energy-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-energy-dark transition">
+                            Enerji Hesaplayiciya Git
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Sikca Sorulan Sorular</h2>
+
+            <div class="space-y-4">
+                <div class="bg-white rounded-lg shadow-sm">
+                    <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center">
+                        <span class="font-semibold text-gray-800">Ilk gorusme ucretli mi?</span>
+                        <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4">
+                        <p class="text-gray-600">Hayir, ilk on gorusme tamamen ucretsizdir. Bu gorusmede ihtiyaclarinizi anlayip size nasil yardimci olabilecegimizi konusuruz.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm">
+                    <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center">
+                        <span class="font-semibold text-gray-800">Hangi sektorlere hizmet veriyorsunuz?</span>
+                        <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4">
+                        <p class="text-gray-600">Ticari binalar, endustriyel tesisler, saglik kuruluslari, egitim kurumlari ve kamu binalari basata olmak uzere her sektore hizmet veriyoruz.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm">
+                    <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center">
+                        <span class="font-semibold text-gray-800">Enerji denetimi ne kadar surer?</span>
+                        <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4">
+                        <p class="text-gray-600">Tesisin buyuklugune ve karmasikligina bagli olarak degisir. Tipik bir denetim 1-4 hafta arasinda tamamlanir. Saha ziyareti genellikle 1-3 gun surer.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm">
+                    <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center">
+                        <span class="font-semibold text-gray-800">Uzaktan danismanlik verebilir misiniz?</span>
+                        <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4">
+                        <p class="text-gray-600">Evet, on degerlendirme ve danismanlik hizmetlerinin bir kismi uzaktan verilebilir. Ancak detayli enerji denetimi icin saha ziyareti gereklidir.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 bg-energy-green rounded-full flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold">Desteknik</span>
+                    </div>
+                    <p class="text-gray-400">Bagimsiz enerji verimliligi danismanligi hizmetleri.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Hizmetler</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="hizmetler.html#denetim" class="hover:text-white transition">Enerji Denetimi</a></li>
+                        <li><a href="hizmetler.html#danismanlik" class="hover:text-white transition">Verimlilik Danismanligi</a></li>
+                        <li><a href="hizmetler.html#proje" class="hover:text-white transition">Proje Yonetimi</a></li>
+                        <li><a href="hizmetler.html#egitim" class="hover:text-white transition">Egitim</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Hizli Erisim</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="hesaplayici.html" class="hover:text-white transition">Enerji Hesaplayici</a></li>
+                        <li><a href="hakkimizda.html" class="hover:text-white transition">Hakkimizda</a></li>
+                        <li><a href="iletisim.html" class="hover:text-white transition">Iletisim</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Iletisim</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>info@desteknik.com</li>
+                        <li>+90 (xxx) xxx xx xx</li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/cem-tozcu-2b287885/" target="_blank" class="hover:text-white transition">
+                                LinkedIn
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Desteknik. Tum haklari saklidir.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
