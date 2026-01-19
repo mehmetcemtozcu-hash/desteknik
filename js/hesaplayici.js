@@ -18,11 +18,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Sektor ortalama tuketim degerleri (kWh/m2/yil)
+// Endustriyel sektor ortalama tuketim degerleri (kWh/m2/yil)
 const sectorAverages = {
-    konut: 100,
-    ticari: 200,
-    endustriyel: 350
+    uretim: 350,
+    gida: 450,
+    tekstil: 400,
+    kimya: 500
 };
 
 // Bina yasina gore verimlilik carpani
@@ -33,25 +34,26 @@ const ageMultipliers = {
     '20+': 1.4
 };
 
-// Mevcut onlemlerin tasarruf potansiyeli uzerindeki etkisi
+// Mevcut endustriyel sistemlerin tasarruf potansiyeli uzerindeki etkisi
 const measureEffects = {
-    led: 0.15,        // %15 tasarruf potansiyeli azalir (zaten uygulanmis)
-    insulation: 0.20,
-    hvac: 0.15,
-    solar: 0.25,
-    bms: 0.10,
-    monitoring: 0.05
+    vsd: 0.20,           // VSD varsa %20 tasarruf potansiyeli azalir
+    compressor: 0.15,    // Verimli kompressor varsa
+    steam: 0.15,         // Buhar sistemi optimize edilmisse
+    cooling: 0.12,       // Sogutma sistemi verimli ise
+    heatrecovery: 0.18,  // Atik isi geri kazanimi varsa
+    monitoring: 0.08     // Enerji izleme/SCADA varsa
 };
 
-// Onerilerin tasarruf potansiyeli
+// Endustriyel onerilerin tasarruf potansiyeli
 const recommendations = {
-    led: { name: 'LED Aydinlatma Donusumu', savings: 15, cost: 'Dusuk' },
-    insulation: { name: 'Bina Yalitimi Iyilestirme', savings: 20, cost: 'Orta' },
-    hvac: { name: 'HVAC Sistem Optimizasyonu', savings: 15, cost: 'Orta-Yuksek' },
-    solar: { name: 'Gunes Enerjisi Sistemi', savings: 25, cost: 'Yuksek' },
-    bms: { name: 'Bina Otomasyon Sistemi', savings: 10, cost: 'Orta' },
-    monitoring: { name: 'Enerji Izleme Sistemi', savings: 5, cost: 'Dusuk' },
-    behavior: { name: 'Enerji Verimli Davranis Egitimi', savings: 5, cost: 'Cok Dusuk' }
+    vsd: { name: 'VSD (Degisken Hiz Surucu) Kurulumu', savings: 25, cost: 'Orta' },
+    compressor: { name: 'Kompressor Sistemi Optimizasyonu', savings: 20, cost: 'Orta-Yuksek' },
+    steam: { name: 'Buhar Sistemi Rehabilitasyonu', savings: 18, cost: 'Orta' },
+    cooling: { name: 'Sogutma Sistemi (Chiller) Optimizasyonu', savings: 15, cost: 'Orta-Yuksek' },
+    heatrecovery: { name: 'Atik Isi Geri Kazanim Sistemi', savings: 22, cost: 'Yuksek' },
+    monitoring: { name: 'Enerji Izleme ve SCADA Sistemi', savings: 10, cost: 'Orta' },
+    leakdetection: { name: 'Basincli Hava Kacak Tespiti', savings: 12, cost: 'Dusuk' },
+    iso50001: { name: 'ISO 50001 Enerji Yonetim Sistemi', savings: 8, cost: 'Dusuk' }
 };
 
 function calculateEnergySavings() {
@@ -87,14 +89,14 @@ function calculateEnergySavings() {
     const ageMultiplier = ageMultipliers[buildingAge];
     const adjustedAverage = sectorAvg * ageMultiplier;
 
-    // Mevcut onlemlere gore tasarruf potansiyelini hesapla
-    let baseSavingsPercent = 0.30; // Temel %30 tasarruf potansiyeli
+    // Endustriyel tesislerde mevcut onlemlere gore tasarruf potansiyelini hesapla
+    let baseSavingsPercent = 0.35; // Endustriyel tesislerde temel %35 tasarruf potansiyeli
 
-    // Bina yasina gore ekstra potansiyel
+    // Ekipman yasina gore ekstra potansiyel
     if (buildingAge === '20+') {
-        baseSavingsPercent += 0.10;
+        baseSavingsPercent += 0.12; // Eski ekipmanda daha fazla potansiyel
     } else if (buildingAge === '10-20') {
-        baseSavingsPercent += 0.05;
+        baseSavingsPercent += 0.07;
     }
 
     // Ortalama ustu tuketim varsa ekstra potansiyel
@@ -212,8 +214,8 @@ function displayRecommendations(existingMeasures) {
     if (availableRecs.length === 0) {
         container.innerHTML = `
             <div class="bg-energy-light rounded-lg p-4 text-center">
-                <p class="text-energy-green font-medium">Tebrikler! Temel enerji verimliligi onlemlerinin cogunu uygulamıssiniz.</p>
-                <p class="text-gray-600 text-sm mt-2">Daha fazla tasarruf icin detayli bir enerji denetimi oneriyoruz.</p>
+                <p class="text-energy-green font-medium">Tebrikler! Temel endustriyel enerji verimliligi onlemlerinin cogunu uygulamıssiniz.</p>
+                <p class="text-gray-600 text-sm mt-2">Daha fazla tasarruf icin detayli bir tesis denetimi oneriyoruz.</p>
             </div>
         `;
     }
@@ -246,8 +248,8 @@ function generatePDFReport() {
 
     // Metin raporu olustur
     const reportContent = `
-DESTEKNIK - ENERJI TASARRUF RAPORU
-===================================
+DESTEKNIK - ENDUSTRIYEL ENERJI TASARRUF RAPORU
+==============================================
 Tarih: ${new Date().toLocaleDateString('tr-TR')}
 
 OZET
@@ -261,11 +263,18 @@ PROJEKSIYON
 Yillik Potansiyel Tasarruf: ${annualSavings}
 5 Yillik Potansiyel Tasarruf: ${fiveYearSavings}
 
+TIPIK TASARRUF ALANLARI
+-----------------------
+- Kompressor sistemleri: %20-30
+- Buhar sistemleri: %15-25
+- Sogutma sistemleri: %15-20
+- Motor ve pompa sistemleri: %15-25
+
 NOT
 ---
 Bu rapor tahmini degerlere dayanmaktadir.
 Gercek tasarruf potansiyeli icin profesyonel
-enerji denetimi oneriyoruz.
+tesis denetimi oneriyoruz.
 
 Iletisim: cem.tozcu@outlook.com
 Web: www.desteknik.com

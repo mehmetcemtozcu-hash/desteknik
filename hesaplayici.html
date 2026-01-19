@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Desteknik Enerji Tasarruf Hesaplayici - Potansiyel enerji tasarrufunuzu hesaplayin">
-    <title>Enerji Hesaplayici - Desteknik</title>
+    <meta name="description" content="Desteknik Endustriyel Enerji Tasarruf Hesaplayici - Fabrika ve uretim tesislerinizin tasarruf potansiyelini hesaplayin">
+    <title>Endustriyel Enerji Hesaplayici - Desteknik</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/style.css">
     <script>
@@ -71,9 +71,9 @@
     <!-- Page Header -->
     <section class="bg-gradient-to-br from-energy-blue to-blue-700 text-white py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Enerji Tasarruf Hesaplayici</h1>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Endustriyel Enerji Tasarruf Hesaplayici</h1>
             <p class="text-xl text-blue-100 max-w-2xl mx-auto">
-                Isletmenizin enerji tuketimini girin, potansiyel tasarrufunuzu hemen ogrein
+                Tesisinizin enerji tuketimini girin, kompressor, buhar ve sogutma sistemlerindeki tasarruf potansiyelinizi ogrein
             </p>
         </div>
     </section>
@@ -83,60 +83,69 @@
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-white rounded-2xl shadow-xl p-8">
                 <form id="energy-calculator" class="space-y-8">
-                    <!-- Building Type -->
+                    <!-- Facility Type -->
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-3">Bina Tipi</label>
-                        <div class="grid grid-cols-3 gap-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-3">Tesis Tipi</label>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                             <label class="relative">
-                                <input type="radio" name="buildingType" value="konut" class="peer sr-only" checked>
-                                <div class="p-4 border-2 border-gray-200 rounded-lg cursor-pointer text-center peer-checked:border-energy-green peer-checked:bg-energy-light transition">
-                                    <svg class="w-8 h-8 mx-auto mb-2 text-gray-500 peer-checked:text-energy-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
-                                    </svg>
-                                    <span class="font-medium">Konut</span>
-                                </div>
-                            </label>
-                            <label class="relative">
-                                <input type="radio" name="buildingType" value="ticari" class="peer sr-only">
-                                <div class="p-4 border-2 border-gray-200 rounded-lg cursor-pointer text-center peer-checked:border-energy-green peer-checked:bg-energy-light transition">
-                                    <svg class="w-8 h-8 mx-auto mb-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-                                    </svg>
-                                    <span class="font-medium">Ticari</span>
-                                </div>
-                            </label>
-                            <label class="relative">
-                                <input type="radio" name="buildingType" value="endustriyel" class="peer sr-only">
+                                <input type="radio" name="buildingType" value="uretim" class="peer sr-only" checked>
                                 <div class="p-4 border-2 border-gray-200 rounded-lg cursor-pointer text-center peer-checked:border-energy-green peer-checked:bg-energy-light transition">
                                     <svg class="w-8 h-8 mx-auto mb-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
                                     </svg>
-                                    <span class="font-medium">Endustriyel</span>
+                                    <span class="font-medium text-sm">Uretim Tesisi</span>
+                                </div>
+                            </label>
+                            <label class="relative">
+                                <input type="radio" name="buildingType" value="gida" class="peer sr-only">
+                                <div class="p-4 border-2 border-gray-200 rounded-lg cursor-pointer text-center peer-checked:border-energy-green peer-checked:bg-energy-light transition">
+                                    <svg class="w-8 h-8 mx-auto mb-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18v18H3V3zm3 6h12M6 12h12M6 15h12"/>
+                                    </svg>
+                                    <span class="font-medium text-sm">Gida Sanayi</span>
+                                </div>
+                            </label>
+                            <label class="relative">
+                                <input type="radio" name="buildingType" value="tekstil" class="peer sr-only">
+                                <div class="p-4 border-2 border-gray-200 rounded-lg cursor-pointer text-center peer-checked:border-energy-green peer-checked:bg-energy-light transition">
+                                    <svg class="w-8 h-8 mx-auto mb-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <span class="font-medium text-sm">Tekstil</span>
+                                </div>
+                            </label>
+                            <label class="relative">
+                                <input type="radio" name="buildingType" value="kimya" class="peer sr-only">
+                                <div class="p-4 border-2 border-gray-200 rounded-lg cursor-pointer text-center peer-checked:border-energy-green peer-checked:bg-energy-light transition">
+                                    <svg class="w-8 h-8 mx-auto mb-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                                    </svg>
+                                    <span class="font-medium text-sm">Kimya/Plastik</span>
                                 </div>
                             </label>
                         </div>
                     </div>
 
-                    <!-- Building Area -->
+                    <!-- Facility Area -->
                     <div>
                         <label for="buildingArea" class="block text-sm font-medium text-gray-700 mb-1">
-                            Bina Alani (m<sup>2</sup>)
+                            Tesis Alani (m<sup>2</sup>)
                         </label>
                         <input type="number" id="buildingArea" name="buildingArea" min="1" required
-                               placeholder="Ornek: 500"
+                               placeholder="Ornek: 5000"
                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-energy-green focus:border-energy-green transition">
                     </div>
 
-                    <!-- Building Age -->
+                    <!-- Equipment Age -->
                     <div>
-                        <label for="buildingAge" class="block text-sm font-medium text-gray-700 mb-1">Bina Yasi</label>
+                        <label for="buildingAge" class="block text-sm font-medium text-gray-700 mb-1">Ekipman Ortalama Yasi</label>
                         <select id="buildingAge" name="buildingAge" required
                                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-energy-green focus:border-energy-green transition">
                             <option value="">Seciniz</option>
-                            <option value="0-5">0-5 yil</option>
+                            <option value="0-5">0-5 yil (Yeni ekipman)</option>
                             <option value="5-10">5-10 yil</option>
                             <option value="10-20">10-20 yil</option>
-                            <option value="20+">20 yil ustu</option>
+                            <option value="20+">20 yil ustu (Eski ekipman)</option>
                         </select>
                     </div>
 
@@ -180,33 +189,33 @@
                         </div>
                     </div>
 
-                    <!-- Current Measures -->
+                    <!-- Industrial Systems -->
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-3">Mevcut Enerji Verimliligi Onlemleri</label>
+                        <label class="block text-sm font-medium text-gray-700 mb-3">Mevcut Sistemler ve Iyilestirmeler</label>
                         <div class="grid md:grid-cols-2 gap-3">
                             <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:border-energy-green cursor-pointer transition">
-                                <input type="checkbox" name="measures" value="led" class="w-4 h-4 text-energy-green border-gray-300 rounded focus:ring-energy-green">
-                                <span class="ml-3 text-gray-700">LED Aydinlatma</span>
+                                <input type="checkbox" name="measures" value="vsd" class="w-4 h-4 text-energy-green border-gray-300 rounded focus:ring-energy-green">
+                                <span class="ml-3 text-gray-700">VSD (Degisken Hiz Surucu)</span>
                             </label>
                             <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:border-energy-green cursor-pointer transition">
-                                <input type="checkbox" name="measures" value="insulation" class="w-4 h-4 text-energy-green border-gray-300 rounded focus:ring-energy-green">
-                                <span class="ml-3 text-gray-700">Yalitim</span>
+                                <input type="checkbox" name="measures" value="compressor" class="w-4 h-4 text-energy-green border-gray-300 rounded focus:ring-energy-green">
+                                <span class="ml-3 text-gray-700">Verimli Kompressor Sistemi</span>
                             </label>
                             <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:border-energy-green cursor-pointer transition">
-                                <input type="checkbox" name="measures" value="hvac" class="w-4 h-4 text-energy-green border-gray-300 rounded focus:ring-energy-green">
-                                <span class="ml-3 text-gray-700">Verimli HVAC Sistemi</span>
+                                <input type="checkbox" name="measures" value="steam" class="w-4 h-4 text-energy-green border-gray-300 rounded focus:ring-energy-green">
+                                <span class="ml-3 text-gray-700">Buhar Sistemi Optimizasyonu</span>
                             </label>
                             <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:border-energy-green cursor-pointer transition">
-                                <input type="checkbox" name="measures" value="solar" class="w-4 h-4 text-energy-green border-gray-300 rounded focus:ring-energy-green">
-                                <span class="ml-3 text-gray-700">Gunes Paneli</span>
+                                <input type="checkbox" name="measures" value="cooling" class="w-4 h-4 text-energy-green border-gray-300 rounded focus:ring-energy-green">
+                                <span class="ml-3 text-gray-700">Verimli Sogutma Sistemi</span>
                             </label>
                             <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:border-energy-green cursor-pointer transition">
-                                <input type="checkbox" name="measures" value="bms" class="w-4 h-4 text-energy-green border-gray-300 rounded focus:ring-energy-green">
-                                <span class="ml-3 text-gray-700">Bina Otomasyon Sistemi</span>
+                                <input type="checkbox" name="measures" value="heatrecovery" class="w-4 h-4 text-energy-green border-gray-300 rounded focus:ring-energy-green">
+                                <span class="ml-3 text-gray-700">Atik Isi Geri Kazanimi</span>
                             </label>
                             <label class="flex items-center p-3 border border-gray-200 rounded-lg hover:border-energy-green cursor-pointer transition">
                                 <input type="checkbox" name="measures" value="monitoring" class="w-4 h-4 text-energy-green border-gray-300 rounded focus:ring-energy-green">
-                                <span class="ml-3 text-gray-700">Enerji Izleme Sistemi</span>
+                                <span class="ml-3 text-gray-700">Enerji Izleme/SCADA</span>
                             </label>
                         </div>
                     </div>
@@ -283,10 +292,10 @@
 
                     <!-- CTA -->
                     <div class="bg-gray-800 text-white rounded-xl p-8 text-center">
-                        <h3 class="text-xl font-bold mb-2">Detayli Analiz Isteyin</h3>
+                        <h3 class="text-xl font-bold mb-2">Detayli Tesis Denetimi Isteyin</h3>
                         <p class="text-gray-300 mb-4">
-                            Bu hesaplama tahmini degerler icermektedir. Gercek tasarruf potansiyelinizi belirlemek icin
-                            profesyonel bir enerji denetimi yaptiralim.
+                            Bu hesaplama tahmini degerler icermektedir. Kompressor, buhar ve sogutma sistemlerinizdeki
+                            gercek tasarruf potansiyelini belirlemek icin profesyonel bir enerji denetimi yaptiralim.
                         </p>
                         <a href="iletisim.html" class="inline-block bg-energy-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-energy-dark transition">
                             Ucretsiz On Gorusme Talep Et
@@ -311,20 +320,20 @@
     <!-- Info Section -->
     <section class="py-16 bg-gray-50">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Hesaplama Hakkinda</h2>
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Endustriyel Enerji Verimliligi Hakkinda</h2>
             <div class="grid md:grid-cols-2 gap-6">
                 <div class="bg-white rounded-xl p-6 shadow-sm">
-                    <h3 class="font-semibold text-gray-800 mb-2">Nasil Hesaplanir?</h3>
+                    <h3 class="font-semibold text-gray-800 mb-2">Hesaplama Yontemi</h3>
                     <p class="text-gray-600 text-sm">
-                        Hesaplama, bina tipiniz, yas, alan ve mevcut onlemlerinize gore sektor verilerine
-                        dayali potansiyel tasarruf oranlarini kullanir.
+                        Hesaplama, tesis tipiniz, ekipman yasi ve mevcut sistemlerinize gore endustriyel sektor
+                        verilerine dayali potansiyel tasarruf oranlarini kullanir.
                     </p>
                 </div>
                 <div class="bg-white rounded-xl p-6 shadow-sm">
-                    <h3 class="font-semibold text-gray-800 mb-2">Dikkat Edilmesi Gerekenler</h3>
+                    <h3 class="font-semibold text-gray-800 mb-2">Tipik Tasarruf Potansiyeli</h3>
                     <p class="text-gray-600 text-sm">
-                        Bu sonuclar tahmini degerlerdir. Gercek tasarruf potansiyeli, detayli bir enerji
-                        denetimi ile belirlenebilir.
+                        Endustriyel tesislerde kompressor %20-30, buhar sistemleri %15-25, sogutma sistemleri %15-20
+                        tasarruf potansiyeli tasimaktadir.
                     </p>
                 </div>
             </div>
@@ -344,16 +353,16 @@
                         </div>
                         <span class="text-xl font-bold">Desteknik</span>
                     </div>
-                    <p class="text-gray-400">Bagimsiz enerji verimliligi danismanligi hizmetleri.</p>
+                    <p class="text-gray-400">Endustriyel tesisler icin bagimsiz enerji verimliligi danismanligi.</p>
                 </div>
 
                 <div>
                     <h4 class="font-semibold mb-4">Hizmetler</h4>
                     <ul class="space-y-2 text-gray-400">
                         <li><a href="hizmetler.html#denetim" class="hover:text-white transition">Enerji Denetimi</a></li>
-                        <li><a href="hizmetler.html#danismanlik" class="hover:text-white transition">Verimlilik Danismanligi</a></li>
+                        <li><a href="hizmetler.html#danismanlik" class="hover:text-white transition">Proses Optimizasyonu</a></li>
                         <li><a href="hizmetler.html#proje" class="hover:text-white transition">Proje Yonetimi</a></li>
-                        <li><a href="hizmetler.html#egitim" class="hover:text-white transition">Egitim</a></li>
+                        <li><a href="hizmetler.html#egitim" class="hover:text-white transition">ISO 50001</a></li>
                     </ul>
                 </div>
 
